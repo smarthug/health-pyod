@@ -56,13 +56,33 @@ cd backend
 
 # uv 설치 (macOS/Linux)
 curl -LsSf https://astral.sh/uv/install.sh | sh
+```
 
-# 의존성 설치
+#### uv 가상환경(venv) 사용
+
+프로젝트는 Python 3.12를 사용합니다. uv로 프로젝트 로컬 가상환경을 생성·활성화한 뒤 의존성을 설치하세요.
+
+```bash
+# 가상환경 생성 (프로젝트 루트에 .venv 생성)
+uv venv --python 3.12
+
+# 가상환경 활성화
+# macOS/Linux
+source .venv/bin/activate
+# Windows (PowerShell)
+.\.venv\Scripts\Activate.ps1
+
+# 의존성 설치 (pyproject.toml/uv.lock 기준)
 uv sync
 
 # 서버 실행 (포트 8001)
 uv run uvicorn api:app --host 127.0.0.1 --port 8001 --reload
+
+# 가상환경 비활성화
+deactivate
 ```
+
+참고: 가상환경을 활성화하지 않고도 `uv run ...`으로 필요한 실행을 수행할 수 있습니다.
 
 Backend API는 `http://localhost:8001`에서 실행됩니다.
 
