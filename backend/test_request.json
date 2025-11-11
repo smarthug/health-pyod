@@ -1,0 +1,11 @@
+{
+  "subject_id": "S2",
+  "algorithm": "ecod",
+  "params": {
+    "contamination": 0.05,
+    "pca_components": 10,
+    "win_s": 60,
+    "step_s": 30,
+    "evaluate": true
+  }
+}
