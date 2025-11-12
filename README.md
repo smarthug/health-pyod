@@ -49,6 +49,10 @@ health-pyod/
 
 ### 1. Backend 설정
 
+https://www.kaggle.com/datasets/orvile/wesad-wearable-stress-affect-detection-dataset
+
+에서 데이터셋 다운로드 후 backend/data 폴더에 압축해제
+
 이 프로젝트는 [uv](https://github.com/astral-sh/uv)를 사용하여 Python 패키지를 관리합니다.
 
 ```bash
@@ -60,11 +64,10 @@ curl -LsSf https://astral.sh/uv/install.sh | sh
 
 #### uv 가상환경(venv) 사용
 
-프로젝트는 Python 3.12를 사용합니다. uv로 프로젝트 로컬 가상환경을 생성·활성화한 뒤 의존성을 설치하세요.
 
 ```bash
 # 가상환경 생성 (프로젝트 루트에 .venv 생성)
-uv venv --python 3.12
+uv venv 
 
 # 가상환경 활성화
 # macOS/Linux
@@ -82,11 +85,9 @@ uv run uvicorn api:app --host 127.0.0.1 --port 8001 --reload
 deactivate
 ```
 
-참고: 가상환경을 활성화하지 않고도 `uv run ...`으로 필요한 실행을 수행할 수 있습니다.
-
 Backend API는 `http://localhost:8001`에서 실행됩니다.
 
-**참고**: uv는 Rust로 작성된 빠른 Python 패키지 관리자로, pip보다 10-100배 빠른 의존성 설치를 제공합니다.
+
 
 ### 2. Frontend 설정
 
@@ -197,9 +198,6 @@ http://localhost:5173 으로 접속하여 대시보드를 사용할 수 있습�
 - Recharts
 - Axios
 
-## 라이선스
-
-MIT
 
 ## 참고
 
